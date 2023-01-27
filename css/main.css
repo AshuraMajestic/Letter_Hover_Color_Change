@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+body{
+    transition:all 2s ease;
+    height:100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.dark{
+    background-color: black;
+}
+.light{
+    background-color: #0C0032;
+}
+.line{
+    position: absolute;
+    width:.2rem;
+    height:3rem;
+    top:0;
+    background-color: white;
+}
+.bulb{
+    position: absolute;
+    top:3rem;
+    width:5rem;
+    height:5rem;
+    cursor:pointer;
+    stroke: white;
+    stroke-width: 20;
+    transform: rotate(180deg);
+}
+.noglow{
+    fill: transparent;
+}
+.glow{
+    fill:rgba(255, 255, 0, 0.658);
+}
+.hide{
+    display: none;
+}
+.show{
+    display: block;
+}
+/* === removing default button style ===*/
+.button {
+    height: auto;
+    background: transparent;
+    border: none;
+}
+
+/* button styling */
+.button {
+    --border-right: 6px;
+    --text-stroke-color: rgba(255,255,255,0.6);
+    --animation-color: #66fcf1;
+    --fs-size: 5rem;
+    letter-spacing: 3px;
+    text-decoration: none;
+    font-size: var(--fs-size);
+    font-family: "Arial";
+    position: relative;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--text-stroke-color);
+}
+/* this is the text, when you hover on button */
+.hover-text {
+    position: absolute;
+    box-sizing: border-box;
+    content: attr(data-text);
+    color: var(--animation-color);
+    width: 0%;
+    inset: 0;
+    border-right: var(--border-right) solid var(--animation-color);
+    overflow: hidden;
+    transition: 0.5s;
+    -webkit-text-stroke: 1px var(--animation-color);
+}
+/* hover */
+.button:hover .hover-text {
+    width: 100%;
+    filter: drop-shadow(0 0 23px var(--animation-color));
+}
